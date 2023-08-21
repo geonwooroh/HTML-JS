@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let grade = {
+            'list' : {'aaa':10, 'bbb':6,'ccc':80},
+            'show':function(){
+                //this키워드 사용하여 로직 작성
+                //document.write()
+                for(name in this.list){
+                    document.write(name + " : "+this.list[name]+"<br/>");
+                }
+                
+                /*document.write("aaa: "+this.list.aaa + "<br/>");
+                document.write("bbb: "+this.list.bbb + "<br/>");
+                document.write("ccc: "+this.list.ccc + "<br/>");*/
+            }
+        }
+        grade.show();
+    </script>
+</body>
+</html>

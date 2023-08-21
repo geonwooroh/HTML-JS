@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //올해는 ***일 지났습니다.
+        let mydate = new Date();
+        mydate.setYear(2023);
+        mydate.setMonth(0);
+        mydate.setDate(1);
+        
+        let myyeardate = new Date();
+        myyeardate.setYear(2023);
+        myyeardate.setMonth(7);
+        myyeardate.setDate(8);
+       
+         let dday = myyeardate-mydate;
+         let day = Math.floor(dday/(1000*60*60*24));
+
+         document.write("<h1>올해는"+ day+"일 지났습니다</h1>")
+
+         /*let theday = new Date(2023,0,1);
+         let today = new Date();
+         let cnt = today.getTime()-theday.getTime();
+
+         let day = Math.floor(cnt/(24*60*60*1000))
+        document.write(day)*/
+
+    </script>
+</body>
+</html>
