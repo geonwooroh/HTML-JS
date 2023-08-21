@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*구체적인 것을 기준으로 우선순위가 정해진다.*/
+        /*우선순위가 가장먼저 적용된다.
+        쉬운방법이긴 하나 좋은 방법은 아님*/
+        li{color: tomato }
+        .classsel{color:aqua;}
+        #idsel{color: PURPLE;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>html</li>
+        <li class = "classsel" id = "idsel"
+        style = "color : green;">css
+        </li>
+        <li class = "classsel">javascript</li>
+    </ul>
+
+    <h1>순서</h1>
+    <ol>
+        <li>style attribute</li>
+        <li>id selector</li>
+        <li>class selector</li>
+        <li>tag selector</li>
+    </ol>
+</body>
+</html>
