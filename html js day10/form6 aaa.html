@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="target" >
+        <input type="text" id="name"/>
+        <input type="submit"/>
+    </form>    
+    <script>
+        let t = document.getElementById('target');
+        t.addEventListener('submit', function(event){
+            if( document.getElementById('name').value.length == 0 ){
+                alert("이름을 입력해 주세요");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
+
+

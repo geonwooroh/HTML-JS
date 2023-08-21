@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <label>prevent event on
+            <input type="checkbox" id="prevent"/>
+        </label>
+    </p>
+    <p>
+        <a id="target1" href="https://www.naver.com">naver</a>
+    </p>
+    <p>
+        <form id="target2" action="https://www.naver.com">
+            <input type="submit" />
+        </form>
+    </p>    
+    <script>
+        document.getElementById('target1').onclick = function(){
+            if( document.getElementById('prevent').checked ){
+                return false;
+            }
+        }
+        // onsubmit, onclick 다 가능
+        document.getElementById('target2').onsubmit = function(){
+            if( document.getElementById('prevent').checked ){
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

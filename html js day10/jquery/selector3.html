@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        .selected{
+            background-color: black;
+            color: beige;
+        }
+    </style>
+</head>
+<body>
+    <ul id = "list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>Oracle</li>
+        <script>
+            //여러개
+            //list라는 id를 가진 태그안에 있는 모든 li태그 선택
+           // $('#list li').addClass('selected');
+           //인자와 인덱스가 동일한 엘리먼트를 찾아내는 선택자
+           //2라는 숫자 index(0부터 시작)
+          // $("#list li:eq(2)").addClass('selected')
+            //index값이 1보다큰 나머지 인덱스 선택
+         // $("#list li:gt(1)").addClass('selected');
+            //인덱스 값이 2보다 작은값 찾아냄
+         //$("#list li:lt(2)").addClass('selected');
+            //짝수만 선택
+        // $("#list li:even").addClass('selected')
+            // 홀수만 선택
+        // $("#list li:odd").addClass('selected')
+        //처음것만
+        $("#list li:first").addClass('selected');
+            //마지막 것만
+        $("#list li:last").addClass('selected');
+        </script>
+       
+    </ul>
+</body>
+</html>

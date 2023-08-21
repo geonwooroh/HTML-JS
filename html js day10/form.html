@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = "form1">
+        id : <input type = "text" name = "user_name" id = "user_name" />
+    </form>
+    <script>
+        //id로 접근
+        let id = document.getElementById('user_name');
+
+        // form태그에 지정되는 name속성을 통하여 접근 가능
+        let myform = document.form1;
+        let id2 = myform.user_name;
+
+        let id3 = document.form1.user_name;
+
+        if(!id.value){//값이 없을 경우 true, 없을 경우 false
+            alert("아이디를 입력해주세요");
+        }
+    </script>
+</body>
+</html>

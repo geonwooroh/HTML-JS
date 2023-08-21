@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name = "form1">
+        <input type = "radio" name = "gender" value="M" checked>남자
+        <input type = "radio" name = "gender" value="F">여자
+    </form>
+    <script>
+        if(!document.form1.gender[0].checked){
+            alert("라디오버튼을 체크해주세요");
+        }
+        //하나라도 체크되어있다면 이 값을 true로 변경
+        let is_checked = false;
+
+        for(let i = 0; i<document.form1.gender.length; i++){
+            if(document.form1.gender[i].checked){
+                is_ckecked = true;
+                break;
+            }
+        }
+
+        if(!is_checked){
+            //하나도 체크가 안되어 있을 경우 처리..
+        }
+    </script>
+</body>
+</html>
