@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <label>전체선택
+        <input type = "checkbox" id = "all_check"/>
+    </label>
+    <hr/>
+    <label>
+        <input type = "checkbox" class = "hobby" value = "soccer"/>축구
+    </label>
+    <label>
+        <input type = "checkbox" class = "hobby" value = "bascketball"/>농구
+    </label>
+    <label>
+        <input type = "checkbox" class = "hobby" value = "baseball"/>야구
+    </label>
+    <script>
+        $("#all_check").change(function(){
+            $(".hobby").prop('checked',$(this).prop('checked'));
+        });
+    </script>
+</body>
+</html>
