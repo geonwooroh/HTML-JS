@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var vscope = 'global';
+        function fscope(){
+            vscope = 'local';//재할당 한 것
+            alert(vscope);
+        }
+        fscope();
+        alert(vscope);//그에 따른 결과. 위에서 local하나,아래에서(여기)에서 하나
+    </script>
+</body>
+</html>
