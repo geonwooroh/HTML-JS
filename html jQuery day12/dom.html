@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <style>
+        td{width: 100px; height: 100px; text-align:center;}
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>1번</td> <td>2번</td> <td>3번</td>
+        </tr>
+        <tr>
+            <td>4번</td> <td>5번</td> <td>6번</td>
+        </tr>
+        <tr>
+            <td>7번</td> <td>8번</td> <td>9번</td>
+        </tr>
+    </table>
+    <script>
+        $("td:eq(4)").css('background','tomato');
+        $("td").eq(2).css('background','powderblue');
+        $("td:eq(4)").next().css('background','purple')
+        $("td").eq(4).prev().css('background','yellow')
+        $("td:eq(4)").parent().css('color','blue')
+        $("td:eq(4)").parent().next().css('color','red')
+        $("td:eq(4)").parent().prev().css('color','MediumSeaGreen')
+        $("td:eq(4)").parent().next().children().css('text-decoration','underline')
+        $("td:eq(4)").parent().next().children().eq(1).css("font-weight","bold")
+    </script>
+</body>
+</html>
