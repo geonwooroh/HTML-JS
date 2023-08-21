@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1. 페이지를 최초로 load시 랜덤 인증번호 5자리가 id auth5 세팅
+        (onload,document.getElementById(해당id).innerHTML = 값;)-->
+
+        
+        <script>
+             function random(n1,n2){
+           return parseInt(Math.random()*(n2-n1 +1)) +n1;
+
+             }
+        let auth = ''
+        for(let i = 0; i<5; i++){
+            auth += random(0,9);
+        }
+             window.onload = function(random){
+        let auth = document.getElementById('auth');
+             }
+             document.write("<h1>인증번호: "+auth+"</h1>")
+        </script>
+    
+        
+        <!--2.인증번호 새로 받기 버튼 클릭시 페이지 새로고침
+        (location.reload())-->
+
+        
+    <p>
+        고객님의 인증번호는 <strong id = "auth">00000</strong>입니다.
+    </p>
+    <input type ="button" value = "인증번호 새로 받기" onclick = "refresh()"/>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload = "insertQuestion()">
+    <h1 id = "question"></h1>
+
+    <script>
+        function insertQuestion(){
+            let q = prompt("사칙연산의 수식을 입력하세요. 예(100+50)");//prompt이용해서 박스로 나타내기
+            let answer = eval(q);//계산하는 수식
+            let result = q + "="+answer;
+            document.getElementById('question').innerHTML = result;
+        }
+    </script>
+    
+   
+</body>
+</html>
