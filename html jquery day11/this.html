@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <button type = "button" id = "single">클릭하세요</button>
+    </div>
+    <hr/>
+    <div>
+        <button type = "button" class = "multi">button(0번 클릭됨)</button>
+        <button type = "button" class = "multi">button(0번 클릭됨)</button>
+        <button type = "button" class = "multi">button(0번 클릭됨)</button>
+    </div>
+  <script>
+    let counter = { single : 0, multi :[0,0,0]};
+    $("#single").click(function(){
+        counter.single++;
+        $(this).html(counter.single + "번 클릭하셨습니다.")
+    });
+    $(".multi").click(function(){
+        //1번째 버튼 클릭->button(1번 클릭됨)
+        //2번째 버튼 클릭->button(1번 클릭됨)
+        let idx = $(this).index();
+        //console.log(idx)
+        counter.multi[idx]++;
+        $(this).html("button"+idx+"(" + counter.multi[idx]+"번 클릭됨)");
+    });
+  </script>
+    
+
+</body>
+</html>

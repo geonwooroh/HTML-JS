@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+    <input type = "button" id = "click_me" value = "click_me"/>
+    <input type = "button" id = "remove_event" value = "unbind"/>
+    <script>
+        function clickHandler(){
+            alert("hello javascript");
+        }
+        $("#click_me").bind('click',clickHandler);
+        $('#remove_event').bind('click',function(){
+            //unbind:어떤 이벤트의 어떤 이벤트 핸들러를 제거할지에 대해 정확하게 기입
+            $("#click_me").unbind('click',clickHandler);
+        })
+    </script>
+    
+</body>
+</html>
