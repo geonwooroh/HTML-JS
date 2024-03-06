@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+    }
+    header {
+        background-color: red;
+        color: #fff;
+        height: 80px;
+        padding: 20px;
+        display: flex;
+        align-items: flex-end;
+    }
+    header img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+    header h1 {
+        margin: 0;
+    }
+    section {
+        padding: 20px;
+        background-color: black;
+        border: 2px solid white;
+    }
+    /* 
+       class가 contact/skills/project에 있는 h2 태그의 색상을 오렌지로 모두 적용해라.
+    */    
+    .contact h2, .skills h2, .projects h2 {
+        color: orange;
+    }
+    /* 
+       class가 contact안에 있는 p태그
+       class가 skills안에 있는 ul태그 
+       class가 project에 있는 p 태그의 색상을 오렌지로 모두 적용해라.
+    */      
+    .contact p, .skills ul, .projects p {
+        color: orange;
+    }
+    
+    /*
+        클래스명이 contact인 놈들의
+        width를 49%로 만들어라.. 나머지는 찾아봐라.
+    */
+    .contact, .skills, .projects {
+        width: 49%;
+        box-sizing: border-box;
+        float: left;
+    }
+    .skills {
+        float: right;
+    }
+    /*
+        clear에 대해서 알아봐라.. 그리고 테스트 해봐라.
+    */
+    .projects {
+        clear: left;
+    }
+    .spacer {
+        clear: both;
+    }
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .phone-number {
+        color: white;
+        font-size: smaller;
+    }
+    .horizontal-line {
+        border-top: 1px solid gray;
+    }
+
+    /* 오른쪽 상단 동그라미 */
+    .circle-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex; /* 동그라미를 가로로 나열하기 위해 필요 */
+    }
+    .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-left: 10px;
+        /* 커서를 포인터로 변경하여 클릭 가능여부를 보여 줍니다 */
+        cursor: pointer; 
+    }
+    /* 자바스크립트 호출 할 건데 nth--child(1) 알아봐라 */
+    .circle:nth-child(1) {
+        background-color: orange;
+    }
+    .circle:nth-child(2) {
+        background-color: blue;
+    }
+    .circle:nth-child(3) {
+        background-color: green;
+    }
+    .circle:nth-child(4) {
+        background-color: lime;
+    }
+    .circle:nth-child(5) {
+        background-color: white;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div>
+        <img src="your_profile_picture.jpg" alt="Profile Picture">
+    </div>
+    <div>
+        <h1>Your Name</h1>
+    </div>
+</header>
+
+<!-- 오른쪽 상단 동그라미 : 자바스크립트 사용해서 호출-->
+<div class="circle-container">
+    <div class="circle" onclick="showAlert()"></div> <!-- 클릭 이벤트 추가 -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle" onclick="showAlertWhite()"></div>
+</div>
+
+<section class="contact">
+    <h2>Contact</h2>
+    <p class="website" style="color: white;">
+        <!-- 이미지 추가 -->
+        <!-- https://icons8.kr/icons/set/message 에서 무료로 다운 쌉 가능 -->
+        <img src="img/home.png" alt="home icon" style="vertical-align: middle;"> www.oooo.com</p>
+        <hr class="horizontal-line">        
+
+    <p class="email" style="color: white;">
+        <!-- 이미지 추가 -->
+        <img src="img/email.png" alt="email icon" style="vertical-align: middle;"> abc@gmail.com</p>
+        <hr class="horizontal-line">        
+
+    <p class="phone-number" style="color: white;">
+        <!-- 이미지 추가 -->
+        <img src="img/tel.png" alt="Telephone icon" style="vertical-align: middle;"> (123) 456-7890</p>
+        <hr class="horizontal-line">        
+
+    <p class="message" style="color: white;">
+        <!-- 이미지 추가 -->
+        <img src="img/message.png" alt="message icon" style="vertical-align: middle;"> Leave a message</p>
+        <hr class="horizontal-line">         
+</section>
+
+<!-- setion과 div의 차이점 확인 : 둘다 똑같은 거다-->
+<section class="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+</section>
+
+<section class="projects">
+    <h2>Projects</h2>
+    <!-- em단위를 사용하여 기본 폰트보다 1.3배로 설정 한다 -->
+    <!-- text-indent 오른쪽으로 약간 밀기-->
+    <p style="color: gray; font-size: 1.3em;text-indent: 12px;">Tools</p>
+
+    <p style="color: white;text-indent: 12px;">Adobe Creative Suite</p>
+    <hr class="horizontal-line">       
+</section>
+
+<div class="spacer"></div>
+
+<footer>
+    <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+</footer>
+
+<script>
+    function showAlert() {
+        alert("첫번째 클릭");
+    }
+    function showAlertWhite() {
+        alert("흰색 클릭");
+    }    
+</script>
+
+</body>
+</html>
