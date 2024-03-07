@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <title>Myprofile</title>
+    <style>
+
+        /* main 클래스를 flex로 만듬 */
+        /* Flexible Box, Flexbox 라고 부르며 기존보다 세련된 레이아웃 배치 기능이다 */
+        .main {
+            display: flex;
+            border: 2px solid blueviolet;
+        }
+        
+        /* contact, skill, education 섹션을 묶을 main-container 클래스 생성 */
+        .main-container {
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            border: 2px solid blue;
+            /* flexBox로 선언한다 / https://blog.naver.com/PostView.nhn?blogId=nsoft21&logNo=221558782515 참조*/
+            display: flex; 
+            /* column모드로 사용한다 : 세로로 정렬한다 */
+            flex-direction: column;
+        }
+
+        /* contact, skill, education의 성격 정의  */
+        .contact, .skill, .education {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            border: 2px solid black;
+        }
+
+        /* project의 성격 정의 */
+        .project {
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <div style="border: 2px solid white;">
+            <img src="img/my_profile.jpg" alt="my profile">
+        </div>
+       <div style="border: 2px solid white;">
+        <h1>geonwoo</h1> 
+       </div>
+    </header>
+
+    <div class="circle-container">
+        <div class="circle" onclick="showAlert()"></div>
+        <div class="circle" onclick="bluechange()"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle" onclick="showAlertwhite()"></div>
+    </div>
+
+    <section class="spare">
+        <h1><strong>백엔드 개발자  |  Seoul, Republic of Korea</strong></h1>
+        <button type="button" onclick="location.href='#'">Instagram</button>
+        <button type="button" onclick="location.href='#'">Linkedln</button>
+        <button type="button" onclick="location.href='#'">Twitter</button>
+    </section>
+
+    <!-- <main> 태그는 HTML5에서 새롭게 추가된 요소입니다.-->
+    <!-- <main> 태그는 해당 문서의 <body> 요소의 주 콘텐츠(main content)를 정의할 때 사용합니다. -->    
+    <main class="main">
+        <!-- main-container 아래에 contact, skill, education 섹션을 만든다 -->
+        <!-- 스타일쉬트에서 flex를 사용했고 column모드로 사용하여 세로로 정렬한다 -->
+        <div class="main-container">
+            <section class="contact">
+                <h2>Contact</h2>
+            </section>    
+
+            <section class="skill">
+                <h2>Skill</h2>
+            </section>
+        
+            <section class="education">
+                <h2>Education</h2>
+            </section>
+        </div>
+
+        <section class="project">
+            <h2>Project</h2>
+        </section>        
+        <!--
+            main : 보라색
+            contact, skill, education : 파랑색
+            project : 빨강색
+
+            중요 중요 중요 : flex공부해야 됨 ( 화면 구도 잡을때 이거 모르면 못함 )
+            그리고 클래스명 대소문자를 구분하진 않지만 반드시 소문자로 습관을 들일것
+            습관을 들이지 않으면 나중에 이것 때문에 정말 헤깔려서 엄청 고생함.
+            그래서 이런 습관이 없으면 스프링할때도 고생하니까 모든 통일성이 있게 작업할것.
+
+            중요한 점은 하나의 main(div라고 해도 됨-구분하기 위해 main이라 했음)를 생성하고, 
+            그 안에 main-container와 project 섹션을 포함하여 둘로 쪼개는 방법을 사용해야 함
+            그렇지 않을 경우는 절대 안됨
+
+             main 이라는 flex를 하나 만듬 : 화면에 꽉 차는 박스 : 100%
+                 그 안에 
+                 main-container : 50 %
+                 project        : 50 %
+                 두개로 나누어 표현 
+                 왜 안됐냐면 큰거 하나를 만들고 그 안에 둘로 나누어 표시해야 하는데
+                 그렇게 안해서 그런거다. 궁금한건 찾아 보고 물어보고 공부하고 해라.
+                 기본 형태를 완벽히 만들고 세부 항목을 만들어야 나중에 고생 안한다.
+         -->
+    </main>
+
+    <footer>
+        <p>Copyright by NibbleSKY Corp. All right reserved.</p>
+    </footer>
+
+</body>
+</html>
