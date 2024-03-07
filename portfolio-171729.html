@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myprofile</title>
+    <style>
+        body{
+            font-family: arial,sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+        header{
+            padding: 100px;
+            background-color: red;
+            color: #fff;
+            display: flex;
+            align-items: flex-end;
+            /*플렉스 컨테이너 내에서 플렉스 아이템들을 수직으로 정렬하는데 사용*/
+        }
+        header img{
+            border-radius: 50%; /*원 형태 요소: border-radius: 50%;를 사용하면 요소의 모서리가 모두 원 형태로 둥글게 됩니다.*/
+            width: 120px;
+            height: 120px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        header h1{
+            margin: 0;
+        }
+        footer{
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            position: fixed;
+            /*
+               width: 100은 해당 요소의 너비를 부모 요소의 100%로 설정. 요소가 부모 요소의 전체 너비를 차지
+               position: fixed; 요소 위치 고정. 스크롤 되지 않고 화면 고정 가능       
+            */
+        }
+        section{
+            padding: 20px;
+            background-color: black;
+            border: 2px; color: white;
+        }
+        .contact hr, .skill hr, .education hr, .Project hr{
+            width:512px;
+            margin: 0px;
+        }
+        .contact h2, .skill h2, .Project h2, .education h2{
+            color: red;
+            font-size: 14px;
+            font-size: 19px;
+        }
+        /* .contact p, .skill nav, .project p{
+            color: orange;
+        } */
+        .contact, .skill, .education{
+            width: 100%;
+            box-sizing: boarder-box;
+            float: none;
+            display: block;
+        }
+        .contact img{
+            vertical-align: middle;
+            color: white;
+        }
+        .skill{
+            float: left;
+            clear:none; 
+            color: white;
+            text-indent: 12px;
+        }
+        .education{
+            color: white; text-indent: 12px;
+        }
+        .project{
+            float: right;
+            clear: right;
+        }/*해당 요소 오른쪽에 부유(일반적인 흐름(flow)에서 벗어나서 다른 요소들과 겹치지 않고 특정 방향으로 이동하는 것)된 요소가 있을 경우 해당 요소의 아래쪽에 새로운 라인을 만든다.*/
+        .spacer{
+            clear: both;
+        }
+        .phone-number{
+            color:white;
+            font-size: smaller;
+        }
+        .circle{
+            width:20px;
+            height:20px;
+            border-radius: 50%;
+            margin-left: 10px; 
+            cursor: pointer;/*커서를 포인터로 변경해 클릭 가능여부를 보여 준다.*/
+        }
+        .circle-container{
+            position: absolute;
+            top:20px;
+            right:20px;
+            display: flex;/*동그라미를 가로로 나열하려고 사용*/
+        }
+        .circle:nth-child(1){
+            background-color: red;
+            border-style: solid;
+            border-color: white;
+        }
+        .circle:nth-child(2){
+            background-color: blue;
+            border-style: solid;
+            border-color: white;
+        }
+        .circle:nth-child(3){
+            background-color: green;
+            border-style: solid;
+            border-color: white;
+        }
+        .circle:nth-child(4){
+            background-color: black;
+            border-style: solid;
+            border-color: white;
+        }
+        .Project{
+            position:relative;
+            float: right;
+            top: -920px;
+        }
+        .contact hr, .skill hr, .Project hr{
+           color: grey ;
+        } 
+        .spare h1{
+            font-size: 14px;
+        }
+        .spare button{
+            color: white;
+            background-color: rgba(255, 0, 0, 0.521);
+            padding: 5px;
+            margin: 3px;
+        }
+    </style>
+</head>
+<main>
+<body>
+    <header>
+        <div>
+            <img src="img/my_profile.jpg" alt="my profile">
+        </div>
+       <div>
+        <h1>geonwoo</h1> 
+       </div>
+    </header>
+    <section class="spare">
+        <h1><strong>백엔드 개발자  |  Seoul, Republic of Korea</strong></h1>
+        <button type="button" onclick="location.href='#'">Instagram</button>
+        <button type="button" onclick="location.href='#'">Linkedln</button>
+        <button type="button" onclick="location.href='#'">Twitter</button>
+    </section>
+    
+
+    <div class="circle-container">
+        <div class="circle" onclick="showAlert()"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle" onclick="showAlertwhite()"></div>
+    </div>
+    <section class="contact">
+        <h2>Contact</h2>
+        <p class="website">
+            <img src="img/home.svg" alt="home icon" src="https://www.google.co.kr/"> www.oooo.com</p>
+            <!-- vertical-align은 img요소를 부모 요소의 중앙에 수직으로 정렬 -->
+            <hr class="horizontal-line"><!--문단,콘텐츠 구분을 위해 수평 구분선 사용-->
+        <p class="email">
+            <img src="img/mail.svg" alt="email icon"> abc@gmail.com</p>
+            <hr class="horizontal-line">
+        <p class="phone-number">
+            <img src="img/phone.svg" alt="Telephone icon"> (123) 456-7890</p>
+            <hr class="horizontal-line">
+        <p class="message">
+            <img src="img/message-square.svg" alt="message icon"> Leave a message</p>
+            <hr class="horizontal-line">
+    </section>
+
+    <section class="skill">
+        <h2>Skill</h2>
+        <p style="color: grey; font-size: 1.3em;">Tools</p><!--text-indent는 CSS 속성 중 하나로, 텍스트 블록의 첫 번째 줄에 적용되는 들여쓰기를 설정-->
+        <p >Adobe Creative Suite</p>
+        <hr class="horizontal-line">
+        <p style="vertical-align: middle;">sketch</p>
+        <hr class="horizontal-line">
+        <p >Figma</p>
+        <hr class="horizontal-line">
+        <p >InVision</p>
+        <hr class="horizontal-line">
+        <p style="color: grey; font-size: 1.3em;">Language</p>
+        <p >HTML,CSS,Python,javascript,SQL</p>
+        <hr class="horizontal-line">
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+        <p><strong>서울대학교</strong></p>
+        <p>응용소프트웨어 전공</p>
+        <p>2014년 졸업</p>
+        <p style="color: grey; font-size: 1.3em;">seoul,Republic of Korea</p>
+    </section>
+
+    <section class="Project">
+        <h2>Project</h2>
+        <p style="color: white; font-size: 1.3em;"><strong>인사시스템 ERP - 기획</strong></p>
+        <p style="color: grey; text-indent: 12px;">(주)시큐리티 | 2018.12.01 ~ 2020.01.30</p>
+        <p style="color: white;">WBS작성, UseCase 다이어그램, 스토리보드, 화면 흐름도, ERD모델링, 프<br/>로젝트 구조도, 테스트 시나리오 작성
+            스프링 시큐리티 세션 폼 로그인, 회원<br/>가입, OAuth2.0, java Mail 회원탈퇴, 로그아웃, 비밀번호 변경(이메일 시<br/>스템)
+            프로필 이미지 게시판 글쓰기, 수정하기, 삭제하기, 검색, 댓글, 페이징<br/>기능 사용자 권한 관리, 그룹관리, 그룹 관리, 메인페이지</p>
+            <hr class="horizontal-line">
+        <p style="color: white; font-size: 1.3em; text-indent: 12px;"><strong>그룹웨어-개발</strong></p>
+        <p style="color: grey; text-indent: 12px;">(주)하이그룹웨어 | 2018.12.01 ~ 2020.01.30</p>
+        <p style="color: white;">사원 생성 및 상세조회(JPA Criteria)게시판 읽기, 작성, 수정, 삭제 게시글<br/>
+            조회수, 좋아요 게시판 답글, 게시글 대댓글(계층구조,DSF Stack)
+        </p>
+        <hr class="horizontal-line">
+        <p style="color: white; font-size: 1.3em; "><strong>기부하자 - 개발</strong></p>
+        <p style="color: grey; text-indent: 12px; text-indent: 12px;">(주)부트캠프 | 2018.12.01 ~ 2020.01.30</p>
+        <p style="color: white;">로그인(Spring Security Session)아이디 저장(JS LocalStorage Cookie 저<br/>
+            장 방식)로그인 유지(Security Remember me)기능 아이디 찾기 기능 비밀<br/>
+            번호 찾기 기능 회원가입 마이페이지의 회원정보 및 주문 내역 조회
+        </p>
+        <hr class="horizontal-line">
+        <p style="color: white; font-size: 1.3em;"><strong>학사일정 - 리더</strong></p>
+        <p style="color: grey; text-indent: 12px;">동아리 | 2018.12.01 ~ 2020.01.30</p>
+        <p style="color: white;">엑셀 파일 업로드 및 다운로드 유지보수 18만 건의 데이터 전처리 및 통계 대<br/>
+                시보드 개발 관리자 페이지 신규 구축
+            </p>
+                <hr class="horizontal-line">
+    </section>
+    
+
+
+   
+    <div class="spacer"></div>
+</main>
+    <footer>
+        <p>Copyright by NibbleSKY Corp. All right reserved.</p>
+    </footer>
+    
+    <script>
+        function showAlert(){
+            alert("색깔 바꾸기 도입할 것");
+        }
+        function showAlertwhite(){
+            alert("하얀색 테마로 바꾸기");
+        }
+    </script>
+</body>
+</html>
