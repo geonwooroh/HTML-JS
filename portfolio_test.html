@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+
+        header, main, footer {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Dark Mode 스타일 */
+        .dark_mode {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .dark_mode header {
+            background-color: #333;
+        }
+
+        .dark_mode footer {
+            background-color: #333;
+        }       
+        
+        /* Dark Mode 스타일 */
+        .light_mode {
+            background-color: white;
+            color: black;
+        }
+
+        .light_mode header {
+            background-color: white;
+        }
+
+        .light_mode footer {
+            background-color: white;
+        }     
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>웹 페이지 제목</h1>
+        <button id="dark_mode" onclick="dark_mode()">다크 모드</button>
+        <button id="light_mode" onclick="light_mode()">라이트 모드</button>
+    </header>
+    <main>
+        <p>웹 페이지 내용</p>
+    </main>
+    <footer>
+        <p>웹 페이지 바닥글</p>
+    </footer>
+</body>
+<script>
+    function dark_mode() {
+        /* DOM(Document Object Model) 확인 */
+        /* 다크모드로 전환 */
+        document.body.classList.toggle('dark_mode');
+        /* classList에 저장 되어 있는 light_mode 삭제 */
+        document.body.classList.remove('light_mode');                
+        /* 현재 상태인 다크 모드를 저장 */
+        document.body.classList.add('dark_mode');
+        
+    }
+
+    function light_mode() {
+        /* 라이트 모드로 전환 */
+        document.body.classList.toggle('light_mode');        
+        /* classList에 저장 되어 있는 다크모드 삭제 */        
+        document.body.classList.remove('dark_mode');        
+        /* 현재 상태인 라이트 모드를 저장 */
+        document.body.classList.add('light_mode');
+    }    
+
+</script>
+</html>
