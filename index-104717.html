@@ -1,0 +1,292 @@
+<html>
+    <head>
+        <title>myprofile_dark</title>
+        <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+        <link rel='stylesheet' href='https://websfont.github.io/scoreDream/scoreDream.css' />
+        <script src="https://unpkg.com/feather-icons"></script>
+    </head>
+    <style>
+        body{
+            font-size: 14px;
+            background-color: rgba(28, 28, 30, 1);
+            color: rgba(229, 229, 234, 1);
+            font-family: SCoreDream;
+            
+        }     
+        header{
+            background-color: red;
+            height: 273px;
+        }
+        .header_people{
+            font-size: 40px;
+            font-weight: 700;
+            padding-top: 165px;
+        }
+        .header_people img{
+            display: inline-block;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+       .circle-container{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+       }
+       .circle{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /*원으로 만들기 위해*/
+            margin-left: 15px;
+            cursor: pointer;
+            float: left; /*옆으로 나열*/
+       }
+         
+        .circle:nth-child(1) {
+        background-color: #FF3B30;
+        box-shadow: 0 0 0 2px white;
+        }
+        .circle:nth-child(2) {
+        background-color: #007AFF;
+        box-shadow: 0 0 0 2px white;
+        }
+        .circle:nth-child(3) {
+        background-color: #34C759;
+        box-shadow: 0 0 0 2px white;
+        }
+        .circle:nth-child(4) {
+        background-color: #48484A;
+        box-shadow: 0 0 0 2px white;
+        }
+        main{
+           width: 768px;
+           margin: 0 auto;
+        }
+        .main_box{
+            width: 765px;
+            font-size: 0;
+            text-align: left;
+            margin: 0 auto;
+            border: 2px solid darkcyan;
+            color: white;
+        }
+        .sub_left{
+            font-size: 16px; 
+            /*width: 256px;*/ /* 각 div를 반씩 차지하도록 설정(좌우 200) */        
+            width: 240px;
+            display: inline-block; /* 인라인 블록 요소로 설정 /옆으로 나열하려고*/
+            vertical-align: top; /* 상단 위치 고정 */      /*아래로 안내려가게*/  
+            box-sizing:border-box;
+            white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+            /* padding-left : 5px 줘서 글자 밀기 */
+            padding-left: 5px;
+            /* 왼쪽 박스 공백주기 16px*/
+            margin-left: 16px;
+           
+            border:2px solid red;
+        }
+        .sub_right{
+            font-size: 14px; 
+            /* width: 512px;*/
+            width: 462px;
+            display: inline-block; /* 인라인 블록 요소로 설정 /옆으로 나열하려고*/
+            vertical-align: top; /* 상단 위치 고정 */        
+            box-sizing:border-box;
+            /* 위쪽 공백 주기 */
+            padding-top: 90px;
+            /* padding-left : 5px 주기 */
+            padding-left:50px;
+            /* 오른쪽 박스 공백주기 50px*/
+            
+           
+            border:2px solid blue;
+            
+            margin: 0 auto;
+            
+        }
+        .font-color-gray{
+            font-size: 16px;
+            font-weight: 300;
+            padding-bottom: 16px;
+            padding-left: 5px;
+            color:rgb(99, 99, 102);
+        }
+        footer{
+            width: 768px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 31px;
+        }
+        .header_people{
+            width: 768px;
+            margin: 0 auto;
+           
+            color: white;
+            text-align: left;
+        }
+        .contact h1, .skill h1, .education h1, .project h1{
+            font-size: 19px;
+            font-weight: 800;
+            padding-bottom: 16px;
+            color: #FF3529;
+        }
+        button{
+            font-size: 14px;
+            display: inline-block; /* 인라인 블록 요소로 설정 */            
+            background-color: #492222;
+            color:white;
+             border: none; /* 버튼 테두리 제거 */
+            box-shadow: none; 
+            /* 안쪽 여백 지정 */        
+            padding: 10px 15px;
+            border-radius: 5px;
+            /* 텍스트 가운데 정렬 */
+            text-align: center;   
+                     
+        }
+        /*회색 글씨가 조금 더 <strong>과 가깝기에 값을 지정해 간격을 좁힌다.*/
+        .project_gray{
+            padding-bottom: 20px;
+        }
+
+        /* 이미지와 글자 있는 항목 인라인블럭을 만들어 중간에 맞춘다 */
+        .idata-span-black{
+            display: inline-block;
+            vertical-align:middle; 
+            margin-right: 10px;
+            color: white;
+            font-size:14px;
+        }
+        .ul{
+            list-style:none;
+        }
+
+    </style>
+<body>
+    <!-- 헤더 -->
+    <header>
+       
+        <section class="header_people">
+            <div>
+            <img src="img/image.png" width="64px", height="64px">geonwoo Roh
+            </div>
+            <div class="circle-container">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </section>
+     </header>
+    <!-- //헤더 -->
+    <!-- 메인 -->
+    <main>
+        <div class="main_box"><!-- 전체 메인을 가운데로 두기 위한 박스-->
+        <div class="sub_left"><!--contact,skill,education을 모아놓은 왼쪽 박스-->
+            <section>
+                <p><strong>백엔드 개발자 | Seoul, Republic of Korea</strong></p>
+                <button type="button" onclick="location.href='#'">Instagram</button>
+                <button type="button" onclick="location.href='#'">Linkedln</button>
+                <button type="button" onclick="location.href='#'">Twitter</button>
+            </section>
+        <section class="contact">
+        <h1>Contact</h1>
+        <ul>
+            <li>
+            <i data-feather="home" class="idata-span-black" style="color: white;"></i>
+            <span class="idata-span-black">www.google.com</span>
+            <hr>
+            </li>
+        </ul>
+        <p>
+            <i data-feather="mail" class="idata-span-black" style="color: white;"></i>
+            <span class="idata-span-black">gwooroh23@gmail.com</span>
+            <hr>
+        </p>
+        <p>
+            <i data-feather="phone" class="idata-span-black" style="color: white;"></i>
+            <span class="idata-span-black">(010) 3655-6338</span>
+            <hr>
+        </p>
+        <p>
+            <i data-feather="message-square" class="idata-span-black" style="color: white;"></i>
+            <span class="idata-span-black">Leave a message</span>
+            <hr>
+        </p>
+        </section>
+        <section class="skill">
+            <h1>Skill</h1>
+            <p class="font-color-gray">Tools</p>
+            <hr>
+            <p class="content" style="color: white;">Adobe Creative suite</p>
+            <hr>
+            <p class="content" style="color: white;">Sketch</p>
+            <hr>
+            <p class="content" style="color: white;">Figma</p>
+            <hr>
+            <p class="content" style="color: white;">InVision</p>
+            <hr>
+            <p class="font-color-gray">Language</p>
+            <p class="font-color-black" style="color: white;">HTML,CSS,Python,Javascript,<br/>SQL</p>
+            <hr>
+        </section>
+        <section class="education">
+            <h1>Education</h1>
+            <p><strong>서울대학교</strong></p>
+            <p style="font-size: 14px; color: white;">응용소프트웨어 전공</p>
+            <p style="font-size: 14px; color: white;">2014년 졸업</p>
+            <p style="font-size: 12px; color: gray;">Seoul, Republic of Korea</p>
+        </section>
+       
+        </div>
+        <div class="sub_right">
+            <session class="project">
+             <h1>Project</h1>
+            <p><strong>인사시스템 ERP - 기획</strong></p>
+            <p class="project_gray" style="color: gray;">(주)시큐리티 | 2018.12.01 ~ 2020. 01. 30</p>
+            
+            <p style="color: white;">WBS 작성, UseCase 다이어그램, 스토리보드, 화면 흐름도, ERD 모델링, 프<br/>
+            로젝트 구조도, 테스트 시나리오 작성 스프링 시큐리티 세션 폼 로그인, 회원<br/>가입. OAuth2.0, Java Mail 회원 탈퇴, 로그아웃, 비밀번호 변경(이메일 시<br/>스템) 
+        , 프로필 이미지 게시판 글쓰기, 수정하기, 삭제하기, 검색, 댓글, 페이징<br/> 기능 사용자 권한 관리, 그룹 관리, 메인페이지</p>
+        <hr style="color: gray;">
+            <p><strong>그룹웨어 - 개발</strong></p>
+            <p class="project_gray" style="color: gray">(주)하이그룹웨어 | 2018.12.01 ~ 2020.01.30</p>
+            <p style="color: white;">사원 생성 및 상세조회(JPA Criteria)게시판 읽기, 작성, 수정, 삭제 게시글<br/>
+            조회수, 좋아요 게시판 답글, 게시글 대댓글(계층구조, DFS Stack)</p>
+            <hr>
+            <p style="color: white;"><strong>기부하자 - 개발</strong></p>
+            <p  class="project_gray" style="color: gray;">(주)부트캠프 | 2018.12.01 ~ 2020.01.30</p>
+            <p style="color: white">로그인(Spring Security Session)아이디 저장(JS LocalStorage Cookie 저<br>장 방식)
+            로그인 유지(Security Remember me)기능 아이디 찾기 기능 비밀<br/>번호 찾기 기능 회원가입 마이 페이지의 회원정보 및 주문 내역 조회</p>
+            <hr>
+            <p><strong>학사일정 - 리더</strong></p>
+            <p class="project_gray" style="color: gray;">동아리 | 2018.12.01 ~ 2020.01.30</p>
+            <p style="color: white;"> 엑셀 파일 업로드 및 다운로드 유지보수 18만 건의 데이터 전처리 및 통계 대<br/>시보드 개발
+            관리자 페이지 신규 구축</p>
+             </session>
+    </div>    
+           
+    </div>
+
+
+
+
+       
+         
+        
+    
+       
+        
+    </main>
+    <!-- //메인 -->
+    <!-- 푸터 -->
+    <footer>
+       <div class="footer_box">
+        Copyright by NibbleSKY Corp. All right reserved.
+       </div>
+    </footer>
+    <!-- //푸터 -->
+</body>
+<script>
+    feather.replace();
+  </script>
+</html>
