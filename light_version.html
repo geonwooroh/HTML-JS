@@ -1,0 +1,820 @@
+<html>
+
+<head>
+    <title>myprofile_white</title>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link rel='stylesheet' href='https://websfont.github.io/scoreDream/scoreDream.css' />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        p {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        button {
+            background-color: transparent;
+
+            border: 0px;
+            padding: 0px;
+            color: black;
+        }
+
+        body {
+            font-size: 14px;
+            background-color: rgba(229, 229, 234, 1);
+            color: rgba(28, 28, 30, 1);
+            font-family: SCoreDream;
+
+        }
+
+        header {
+            background-color: #007AFF;
+        }
+
+        main {
+            width: 768px;
+            margin: 0 auto;
+            padding-bottom: 31px;
+        }
+
+        .main_box {
+            width: 768px;
+            margin: 0 auto;
+            padding-left: 16px;
+            /*큰 박스 기준으로 왼쪽에서 오른쪽으로 16px밀기*/
+            display: inline-block;
+            /*footer를 아래로 내리기 위해. 즉 박스를 끝낸다는 의미*/
+        }
+
+        footer {
+            /* width: 768px;
+            margin: 0 auto; */
+            text-align: center;
+            bottom: 31px;
+        }
+
+        .header_color>ul>li {
+            display: inline-block;
+            /* float: left; */
+            list-style-type: none;
+            /* width: 32px;
+            height: 32px;
+            border-radius: 50%; */
+            padding-right: 10px;
+
+        }
+
+        .spare {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .spare>ul>li {
+            display: inline-block;
+            list-style-type: none;
+            padding-right: 5px;
+            /*버튼 사이의 간격*/
+        }
+
+        .header_color>ul>li:last-child {
+            padding-right: 0px;
+        }
+
+        .button_control>li>button {
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            padding: 9px;
+        }
+
+        .spare_button>li>button {
+            background-color: #0C81FD;
+            color: black;
+            /* display: inline-block; */
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            /* list-style-type: none; */
+        }
+
+        .spare_button {
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+
+        .header_color {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .light_and_dark button>svg {
+            width: 16px;
+            height: 16px;
+            padding-right: 5px;
+            vertical-align: text-bottom;
+            /*span태그와 아이콘 수평 맞추기*/
+        }
+
+        .light_and_dark button {
+            padding-bottom: 5px;
+            /* vertical-align: middle; */
+            border-bottom: 1px solid transparent;
+            cursor: pointer;
+            /* 커서가 손가락으로 변하게 하는 것*/
+        }
+
+        .light_and_dark span {
+            padding-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* .line{text-decoration:underline;}
+        .line.on{text-decoration:underline;text-underline-offset:5px;} */
+
+        .light_and_dark button:hover,
+        .light_and_dark button.sel {
+            color: white;
+            border-bottom: 1px solid white;
+            /*light일땐 light가 불 들어오게*/
+        }
+
+        .my_profile {
+            font-size: 40px;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
+            padding-bottom: 20px;
+
+        }
+
+        .my_profile>span {
+            padding-left: 20px;
+            vertical-align: middle;
+        }
+
+        .header_main img {
+            display: inline-block;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .button_control>li:nth-child(1) button {
+            background-color: #FF3B30;
+        }
+
+        .button_control>li:nth-child(2) button {
+            background-color: blue;
+        }
+
+        .button_control>li:nth-child(3) button {
+            background-color: #34C759;
+        }
+
+        .button_control>li:nth-child(4) button {
+            background-color: black;
+        }
+
+        .spare_button>li:nth-child(1) button {
+            color: white;
+        }
+
+        .spare_button>li:nth-child(2) button {
+            color: white;
+        }
+
+        .spare_button>li:nth-child(3) button {
+            color: white;
+        }
+
+        .light_and_dark {
+            width: 768;
+            margin: 0 auto;
+            padding-top: 121px;
+            padding-bottom: 31px;
+            /*높이 273을 이런 형식으로 맞춰준다. 패딩을 아래로 내리면서 */
+        }
+
+        .header_main {
+            width: 768px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+            padding-left: 16px;
+            /*전체 기준 옆으로 16px밀기*/
+            /* height: 273px; */
+        }
+
+        /* .header_color>ul>li:nth-child(1) {
+            background-color: #FF3B30;
+            border: 1px solid white;
+        }
+        .header_color>ul>li:nth-child(2) {
+            background-color: #007AFF;
+            border: 1px solid white;
+        }
+        .header_color>ul>li:nth-child(3) {
+            background-color: #34C759;
+            border: 1px solid white;
+        }
+        .header_color>ul>li:nth-child(4) {
+            background-color: blue;
+            border: 1px solid white;
+        } */
+        /*헤더 스타일 끝*/
+        .contact>li {
+            list-style-type: none;
+            font-size: 14px;
+            padding-left: 5px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            text-underline-offset: 10px;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.486);
+        }
+
+        .spare_button {
+            padding-top: 20px;
+        }
+
+        .home,
+        .mail,
+        .phone,
+        .message_square {
+            /* display: inline-block; */
+            vertical-align: top;
+            margin-left: 10px;
+        }
+
+        .mail,
+        .phone {
+            color: black;
+            text-decoration-line: none;
+            /*a태그의 밑줄, 파란색 효과 없애기*/
+        }
+
+        .sub_left {
+            width: 240px;
+            float: left;
+            /*이게 RIGHT박스를 오른쪽 위로 올려버린다.*/
+            padding-right: 50px;
+            /*sub_right박스 전체를 밀어버린다.*/
+            /* display: inline-block; */
+            /*float: left; 때문에 무시되는 부분*/
+        }
+
+        .feather {
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+        }
+
+        /*i태그인데 i가 아니고 feather로 해야 크기가 조절된다.*/
+        .adobe,
+        .sketch,
+        .figma,
+        .invision,
+        .html {
+            list-style-type: none;
+            font-size: 14px;
+            padding-left: 5px;
+            padding-bottom: 8px;
+
+            color: rgb(99, 99, 102);
+            /*짙은색*/
+            padding-top: 15px;
+            vertical-align: middle;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.486);
+        }
+
+        .skill_gray {
+            font-size: 16px;
+            font-weight: 300;
+            padding-left: 5px;
+            padding-bottom: 16px;
+
+            color: rgb(209, 209, 214);
+            /*흐린색*/
+            padding-top: 15px;
+            list-style-type: none;
+
+        }
+
+        .education>li {
+            list-style-type: none;
+            font-size: 14px;
+            padding-left: 5px;
+            padding-bottom: 8px;
+            color: black;
+        }
+
+        .education_gray>span {
+            color: gray;
+            padding-bottom: 15px;
+            color: rgb(209, 209, 214);
+        }
+
+        .education_gray {
+            border-bottom: 1px solid rgba(128, 128, 128, 0.486);
+        }
+
+        .sub_left>h1 {
+            font-size: 19px;
+            font-weight: 800;
+            padding-bottom: 16px;
+            padding-top: 10px;
+            color: #0C81FD;
+        }
+
+        /*sub_left*/
+        .sub_right {
+            width: 462px;
+            /*왼쪽 박스 옆에 자석처럼 붙여버림 그렇게 되서 왼쪽의 너비까지 포함해서 462가 넣어져버린다. 
+           즉 오른쪽으로 너비가 더 필요한 상황. 결국은 768로 설정해야 내가 원래 하려고 했던 462를 넣은 효과가 나타난다. 
+           한가지 더 생각해야 하는건 왼쪽박스에서 16PX만큼 옆으로 밀었으니까 결국 462->768->753*/
+            display: inline-block;
+
+        }
+
+        .sub_right>h1 {
+            font-size: 19px;
+            font-weight: 800;
+            padding-bottom: 16px;
+            color: #0C81FD;
+        }
+
+        /*여기까지 left*/
+        .icon_box {
+            width: 20px;
+            padding-bottom: 30px;
+            float: left;
+        }
+
+        .under_line_1 {
+            width: 350px;
+            /*저장 버튼이 들어올 수 있게 너비를 줄여 저장 버튼의 공간 생성*/
+            display: inline-block;
+            /*위의 float-left를 이용해 바로 옆에 붙이려고*/
+            list-style-type: none;
+            border-bottom: 1px solid gray;
+            padding-top: 5px;
+            /*전체 길이 내리기*/
+        }
+
+        .under_line_2 {
+            width: 350px;
+            /*저장 버튼이 들어올 수 있게 너비를 줄여 저장 버튼의 공간 생성*/
+            display: inline-block;
+            /*위의 float-left를 이용해 바로 옆에 붙이려고*/
+            list-style-type: none;
+            border-bottom: 1px solid gray;
+            padding-top: 4px;
+        }
+
+        .save_button {
+            background-color: #B7CFEE;
+            color: black;
+            border: none;
+            padding: 7px;
+            /*크기조절*/
+            border-radius: 5px;
+            /*버튼 모서리 지우기*/
+            text-align: center;
+            /*저장 글씨 버튼 가운데에 오게 하기*/
+            margin-left: 400px;
+        }
+
+        .up_box {
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+
+        .git {
+            list-style-type: none;
+            padding-bottom: 20px;
+
+        }
+
+        .input_git,
+        .input_mail {
+            width: 300px;
+            border-width: 0;
+        }
+
+        /*여기까지 up박스*/
+        .mail2 {
+            list-style-type: none;
+            /* padding-right: 9px; */
+        }
+
+        .git2 {
+            width: 450px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            list-style-type: none;
+        }
+
+        .git2_gray {
+            width: 450px;
+            padding-top: 10px;
+            color: gray;
+            list-style-type: none;
+        }
+
+        .sub_find {
+            /* width: 370px; */
+            border-bottom: 1px dotted gray;
+            padding-bottom: 20px;
+            padding-top: 10px;
+        }
+
+        .black {
+            width: 350px;
+            padding-right: 60px;
+            /*짧은 php 개발자 찾습니다 제외하고 나머지 li 아이콘과 문장 떨어뜨리기*/
+        }
+
+        .black_short {
+            width: 350px;
+            padding-right: 160px;
+            /*문장 자체가 짧아 너비가 좁음. 그래서 억지로 밀어서 아이콘 위치 정하기*/
+        }
+
+        .icon_eye {
+            padding-right: 20px;
+        }
+
+        .find {
+            padding-bottom: 10px;
+        }
+
+        .git-commit2,
+        .mail_2 {
+            margin-right: 5px;
+            /*왼쪽 아이콘과 문장 간격 띄우기*/
+        }
+
+        .mail_2_gray {
+            margin-right: 5px;
+            /*회색 메일 아이콘의 간격 띄우기*/
+            color: gray;
+        }
+
+        .black_gray {
+            color: gray;
+        }
+
+        .last_button_control {
+            padding-top: 30px;
+            padding-left: 170px;
+        }
+
+        .last_button>ul>li {
+            display: inline-block;
+            list-style-type: none;
+            padding-right: 12px;
+            /*버튼 사이의 간격*/
+        }
+
+        .last_button_control>li>button {
+            background-color: #0C81FD;
+            color: black;
+            /* display: inline-block; */
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            /* list-style-type: none; */
+        }
+
+        .last_button_control>li:nth-child(1) button {
+            color: white;
+            box-shadow: 0px 0px 20px #000;
+        }
+
+        .last_button_control>li:nth-child(2) button {
+            color: black;
+        }
+
+        .last_button_control>li:nth-child(3) button {
+            color: black;
+        }
+
+        /*메인 끝*/
+        .footer_box {
+            padding-bottom: 31px;
+        }
+    </style>
+
+<body>
+    <!--헤더-->
+    <header>
+        <div class="header_color">
+            <ul class="button_control">
+                <li><button onclick="ChangeColor(0)"></button></li>
+                <li><button onclick="ChangeColor(1)"></button></li>
+                <li><button onclick="ChangeColor(2)"></button></li>
+                <li><button onclick="ChangeColor(3)"></button></li>
+            </ul>
+        </div>
+        <div class="header_main">
+            <div class="light_and_dark">
+                <span><button class="sel" button type="button" onclick="location.href = 'index3.html'"><i
+                            data-feather="sun"></i>Light</button></span>
+                <span><button button type="button" onclick="location.href = 'index2.html'"><i
+                            data-feather="moon"></i>Dark</button></span>
+            </div>
+            <div class="my_profile">
+                <img src="img/my_photo.jpg" width="64px" , height="64px"><span class="geonwoo">geonwoo Roh</span>
+            </div>
+        </div>
+    </header>
+    <!--//헤더-->
+    <!--메인-->
+    <main>
+        <div class="main_box">
+            <div class="spare">
+                <span><strong>백엔드 개발자 | Seoul, Republic of Korea</strong></span>
+                <ul class="spare_button">
+                    <li><button id="instagram">Instagram</button></li>
+                    <li><button id="linkedin">Linkedln</button></li>
+                    <li><button id="twitter">Twitter</button></li>
+                </ul>
+            </div>
+            <div class="sub_left">
+                <h1 id="contact">Contact1</h1>
+                <ul class="contact">
+                    <li> <i data-feather="home"></i><span class="home"
+                            onclick="location.href = 'index2.html'">www.google.com</span></li>
+                    <li> <i data-feather="mail"></i><a class="mail"
+                            href="mailto:gwooroh23@gmail.com">gwooroh23@gmail.com</a></li>
+                    <li> <i data-feather="phone"></i><a class="phone"
+                            href="tel:010-3655-6338">(010)-3655-6338</span></a>
+                    <li> <i data-feather="message-square"></i><span class="message_square"
+                            onclick="location.href = 'index3.html'">Leave a message</span></li>
+                </ul>
+                <h1 id="skill">Skill</h1>
+                <ul class="skill">
+                    <li class="skill_gray"><span>Tools</span></li>
+                    <li class="adobe"><span>Adobe Creative Suite</span></li>
+                    <li class="sketch"><span>Sketch</span></li>
+                    <li class="figma"><span>Figma</span></li>
+                    <li class="invision"><span>InVision</span></li>
+                    <li class="skill_gray"><span>Language</span></li>
+                    <li class="html"><span>HTML, CSS, Python, Javascript, SQL</span></li>
+                </ul>
+                <h1 id="education">Education</h1>
+                <ul class="education">
+                    <li class="seoul_univ"><strong>서울대학교</strong></li>
+                    <li class="sofrware">응용소프트웨어전공</li>
+                    <li class="graduate">2014년 졸업</li>
+                    <li class="education_gray"><span class="seoul">Seoul, Republic of Korea</span></li>
+                </ul>
+
+            </div>
+
+            <div class="sub_right">
+                <h1>Leave a message</h1>
+                <div class="up_box"><!--큰 박스 위에 하나-->
+                    <div class="icon_box"><!--아이콘 박스 하나-->
+                        <ul class="leave">
+                            <li class="git">
+                                <i data-feather="git-commit"></i>
+                                <!-- <input> -->
+
+                            </li>
+                            <li class="mail2"> <i data-feather="mail"></i></li>
+                        </ul>
+                        <!-- <button type="button" class="save_button">저장</button> -->
+                    </div>
+                    <div class="under_line_1"><!--줄 긋기용 박스 하나-->
+                        <li><input type="text" class="input_git" placeholder="깃허브 링크"></li>
+                    </div>
+                    <div class="save">
+                        <button type="button" class="save_button">저장</button>
+                    </div>
+                    <div class="under_line_2">
+                        <li><input type="text" class="input_mail" placeholder="메일보내기"></li>
+                    </div>
+
+                </div>
+                <div class="down_box"><!--큰 아래 박스 하나-->
+                    <ul class="find">
+                        <li class="git2">
+                            <i data-feather="git-commit" class="git-commit2"></i><span class="black">WBS 작성, UseCase
+                                다이어그램 개발자 찾습니다.</span>
+                            <span class="icon_eye"><i data-feather="eye"></i></span>
+                            <span class="trash-2"><i data-feather="trash-2"></i></span>
+                        </li>
+                        <ul class="sub_find">
+                            <i data-feather="mail" class="mail_2"></i><span class="black">test01@naver.com</span>
+                        </ul>
+                        <ul class="find">
+                            <li class="git2">
+                                <i data-feather="git-commit" class="git-commit2"></i><span class="black_short">PHP 개발자
+                                    구합니다. 연락주세요</span>
+                                <span class="icon_eye"><i data-feather="eye"></i></span>
+                                <span class="trash-2"><i data-feather="trash-2"></i></span>
+                            </li>
+                        </ul>
+                        <ul class="sub_find">
+                            <i data-feather="mail" class="mail_2"></i><span class="black">test02@daum.net</span>
+                        </ul>
+                        <ul class="find">
+                            <li class="git2_gray">
+                                <i data-feather="git-commit" class="git-commit2"></i><span class="black">백엔드 개발자 구합니다.
+                                    관심 있으시면 연락주세요</span>
+                                <span class="icon_eye"><i data-feather="eye-off"></i></span>
+                                <span class="trash-2"><i data-feather="trash-2"></i></span>
+                            </li>
+                        </ul>
+                        <ul class="sub_find">
+                            <i data-feather="mail" class="mail_2_gray"></i><span
+                                class="black_gray">test03@ifdo.co.kr</span>
+                        </ul>
+                        <ul class="find">
+                            <li class="git2_gray">
+                                <i data-feather="git-commit" class="git-commit2"></i><span class="black">백엔드 개발자 구합니다.
+                                    관심 있으시면 연락주세요</span>
+                                <span class="icon_eye"><i data-feather="eye-off"></i></span>
+                                <span class="trash-2"><i data-feather="trash-2"></i></span>
+                            </li>
+                        </ul>
+                        <ul class="sub_find">
+                            <i data-feather="mail" class="mail_2_gray"></i><span
+                                class="black_gray">test04@ifdo.co.kr</span>
+                        </ul>
+                        <ul class="find">
+                            <li class="git2_gray">
+                                <i data-feather="git-commit" class="git-commit2"></i><span class="black">백엔드 개발자 구합니다.
+                                    관심 있으시면 연락주세요</span>
+                                <span class="icon_eye"><i data-feather="eye-off"></i></span>
+                                <span class="trash-2"><i data-feather="trash-2"></i></span>
+                            </li>
+                        </ul>
+
+                </div>
+
+                <!-- <ul class="leave">
+                            <li> <i data-feather="git-commit"></i></li>
+                            <span><button type="button" class="save_button" onclick="location.href='#'">저장</button></span>
+                            <li> <i data-feather="mail"></i></li> 
+                            
+                         </ul> -->
+                <ul class="sub_find">
+                    <i data-feather="mail" class="mail_2_gray"></i><span class="black_gray">test05@ifdo.co.kr</span>
+                </ul>
+                <div class="last_button">
+                    <ul class="last_button_control">
+                        <li><button>1</button></li>
+                        <li><button>2</button></li>
+                        <li><button>3</button></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+    <!--//메인-->
+    <!-- 푸터-->
+    <footer>
+        <div class="footer_box">
+            Copyright by NibbleSKY Corp. All right reserved.
+        </div>
+    </footer>
+    <!-- //푸터-->
+</body>
+<script>
+    feather.replace();
+
+    function ChangeColor(index) {
+        // 동그라미 이름 가져오기
+        var circle = document.getElementsByClassName("circle");
+        // 하나만 찾아와라.
+        var header = document.querySelector("header");
+        // // 여러개가 있을 경우 button에는 모든 요소가 들어가 있음
+        // var button = document.querySelectorAll("button");
+
+        var contact = document.getElementById("contact");
+        var skill = document.getElementById("skill");
+        var education = document.getElementById("education");
+
+        var instagram = document.getElementById("instagram");
+        var linkedin = document.getElementById("linkedin");
+        var twitter = document.getElementById("twitter");
+
+        /*숫자 지정*/
+        const color = ['#FF3B30', 'blue', '#34C759', 'black'];
+        
+        if (index === 0) {
+            header.style.backgroundColor = color[0];
+
+            contact.style.color = color[0];
+            skill.style.color = color[0];
+            education.style.color = color[0]; 
+
+            instagram.style.backgroundColor = color[0];
+            linkedin.style.backgroundColor = color[0]; 
+            twitter.style.backgroundColor = color[0]; 
+
+        }else if (index===1){
+            header.style.backgroundColor = color[1];
+
+            contact.style.color = color[1];
+            skill.style.color = color[1];
+            education.style.color = color[1]; 
+
+            instagram.style.backgroundColor = color[1];
+            linkedin.style.backgroundColor = color[1]; 
+            twitter.style.backgroundColor = color[1];             
+
+        } else if (index===2){
+            header.style.backgroundColor = color[2];
+
+            contact.style.color = color[2];
+            skill.style.color = color[2];
+            education.style.color = color[2]; 
+
+            instagram.style.backgroundColor = color[2];
+            linkedin.style.backgroundColor = color[2]; 
+            twitter.style.backgroundColor = color[2];             
+
+        }else if (index===3){
+            header.style.backgroundColor = color[3];
+
+            contact.style.color = color[3];
+            skill.style.color = color[3];
+            education.style.color = color[3]; 
+
+            instagram.style.backgroundColor = color[3];
+            linkedin.style.backgroundColor = color[3]; 
+            twitter.style.backgroundColor = color[3];             
+        }
+
+
+        // // 클릭된 circle의 배경색을 변경.
+        // // 등호 3개인 이유는 완전히 같기 때문
+        // if (index === 0) {
+        //     header.style.backgroundColor = color[0];
+
+        //     contact.style.color = color[0];
+        //     skill.style.color = color[0];
+        //     education.style.color = color[0];
+
+        //     // 모든 버튼의 색상 변경            
+        //     //buttonChangeColor(0);
+
+        //     // 모든 버튼의 색상 변경
+        //     for (var i = 0; i < button.length; i++) {
+        //         button[i].style.backgroundColor = color[0];
+        //     }
+
+        // } else if (index === 1) {
+        //     header.style.backgroundColor = color[1];
+
+        //     contact.style.color = color[1];
+        //     skill.style.color = color[1];
+        //     education.style.color = color[1];
+
+        //     // 모든 버튼의 색상 변경
+        //     buttonChangeColor(1);
+        // } else if (index === 2) {
+        //     header.style.backgroundColor = color[2];
+
+        //     // 모든 버튼의 색상 변경
+        //     buttonChangeColor(2);
+
+        // } else if (index === 3) {
+        //     header.style.backgroundColor = color[3];
+
+        //     // 모든 버튼의 색상 변경
+        //     buttonChangeColor(3);
+        // }
+
+        // // 코딩이 많아 새로 펑션 만들어서 적용
+        // function buttonChangeColor(index) {
+
+        //     // 모든 버튼의 색상 변경
+        //     for (var i = 0; i < button.length; i++) {
+        //         button[i].style.backgroundColor = color[index];
+        //     }
+
+        //     // for (var i = 0; i < h1.length; i++) {
+        //     //     h1[i].style.backgroundColor = color[index];
+        //     // }
+        // }
+
+
+
+    } //class로 바꿀땐 getelementbyid가 아니고 gtelementbyclassname으로 가져온다
+</script>
+</head>
+
+</html>
