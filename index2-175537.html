@@ -1,0 +1,401 @@
+<html>
+    <head>
+    <title>myprofile_dark</title>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+    <link rel='stylesheet' href='https://websfont.github.io/scoreDream/scoreDream.css' />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>  
+
+    ul{
+        margin: 0px;
+        padding: 0px;
+    }
+    p{
+        margin: 0px;
+        padding: 0px;
+    }
+    button{
+        background-color: transparent;
+        
+        border: 0px;
+        padding: 0px;
+        color: black;
+    }
+        body{
+            font-size: 14px;
+            background-color: rgba(28, 28, 30, 1);
+            color: rgba(229, 229, 234, 1);
+            font-family: SCoreDream;
+            
+        }     
+        header{
+            background-color: red;
+        }
+        main{
+            width: 768px;
+            margin: 0 auto;
+            padding-bottom: 31px;
+        }
+        .main_box{
+            width: 768px;
+            margin: 0 auto;
+            padding-left: 16px; /*큰 박스 기준으로 왼쪽에서 오른쪽으로 16px밀기*/
+            display: inline-block; /*footer를 아래로 내리기 위해. 즉 박스를 끝낸다는 의미*/
+        }
+        footer{
+            /* width: 768px;
+            margin: 0 auto; */
+            text-align: center;
+            bottom: 31px;
+        }
+        .header_color>ul>li{
+            display: inline-block;
+            /* float: left; */
+            list-style-type: none;
+            /* width: 32px;
+            height: 32px;
+            border-radius: 50%; */
+            padding-right: 10px;
+           
+        }
+        .spare{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .spare>ul>li{
+            display: inline-block;
+            list-style-type: none;
+            padding-right: 5px; /*버튼 사이의 간격*/           
+        }
+        .header_color>ul>li:last-child{
+            padding-right: 0px;
+        }
+        .button_control>li>button{
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            padding: 9px;
+        }
+        .spare_button>li>button{
+            background-color: #492222;
+            color: white;
+            /* display: inline-block; */
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-align: center;
+            /* list-style-type: none; */
+        }
+        .spare_button{
+            padding-left: 1px;
+           padding-right: 1px;
+        }
+        .header_color{
+            position: absolute;
+            top: 20px;
+            right: 20px ;
+        }
+        .light_and_dark button>svg{
+            width: 16px;
+            height: 16px;
+            padding-right: 5px;
+            vertical-align: text-bottom; /*span태그와 아이콘 수평 맞추기*/
+        }
+        .light_and_dark button{
+            padding-bottom: 5px;
+           /* vertical-align: middle; */
+           border-bottom: 1px solid transparent;
+           cursor: pointer; /* 커서가 손가락으로 변하게 하는 것*/
+        }
+        .light_and_dark span{
+            padding-right: 10px;
+            vertical-align: middle;
+        }
+        /* .line{text-decoration:underline;}
+        .line.on{text-decoration:underline;text-underline-offset:5px;} */
+       
+        .light_and_dark button:hover,.light_and_dark button.sel{
+            color: white;
+            border-bottom: 1px solid white;     /*dark일땐 dark가 불 들어오게*/
+        }
+       .my_profile{
+        font-size: 40px;
+        font-weight: 700;
+        color: rgb(255,255,255);
+        padding-bottom: 20px;
+
+       }
+       .my_profile>span{
+        padding-left:20px;
+        vertical-align: middle;
+       }
+       .header_main img{
+            display: inline-block;
+            border-radius: 50%;
+            vertical-align: middle;
+       }
+        .button_control>li:nth-child(1) button{
+            background-color: #FF3B30;
+        }
+        .button_control>li:nth-child(2) button{
+            background-color: blue;
+        }
+        .button_control>li:nth-child(3) button{
+            background-color: #34C759;
+        }
+        .button_control>li:nth-child(4) button{
+            background-color: black
+        }
+        .spare_button>li:nth-child(1) button{
+           color: white;
+        }
+        .spare_button>li:nth-child(2) button{
+            color: white;
+        }
+        .spare_button>li:nth-child(3) button{
+            color: white;
+        }
+        .light_and_dark{
+            width: 768;
+            margin: 0 auto;
+            padding-top: 121px;
+             padding-bottom: 31px; /*높이 273을 이런 형식으로 맞춰준다. 패딩을 아래로 내리면서 */
+        }
+        .header_main{
+            width: 768px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+            padding-left: 16px; /*전체 기준 옆으로 16px밀기*/
+            /* height: 273px; */
+        }
+       
+        /* .header_color>ul>li:nth-child(1) {
+            background-color: #FF3B30;
+            border: 1px solid white;
+        }
+        .header_color>ul>li:nth-child(2) {
+            background-color: #007AFF;
+            border: 1px solid white;
+        }
+        .header_color>ul>li:nth-child(3) {
+            background-color: #34C759;
+            border: 1px solid white;
+        }
+        .header_color>ul>li:nth-child(4) {
+            background-color: blue;
+            border: 1px solid white;
+        } */
+        /*헤더 스타일 끝*/
+        .contact>li{
+            list-style-type: none;
+            font-size: 14px;
+            padding-left: 5px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            text-underline-offset: 10px;
+            border-bottom: 1px solid rgb(99,99,102); 
+        }
+        .spare_button{
+            padding-top: 20px;
+        }
+        .home, .mail, .phone, .message_square{
+            /* display: inline-block; */
+            vertical-align:top; 
+            margin-left: 10px;           
+        }
+        .mail, .phone{
+            color: white;
+            text-decoration-line: none;  /*a태그의 밑줄, 파란색 효과 없애기*/
+        }
+        .sub_left{
+            width:240px;
+            float: left; 
+            /*이게 RIGHT박스를 오른쪽 위로 올려버린다.*/
+            padding-right: 50px; /*sub_right박스 전체를 밀어버린다.*/
+            /* display: inline-block; */  /*float: left; 때문에 무시되는 부분*/
+        }
+        .feather{
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+        } /*i태그인데 i가 아니고 feather로 해야 크기가 조절된다.*/
+       
+        .adobe, .sketch, .figma, .invision, .html{
+            list-style-type: none;
+            font-size: 14px;
+            padding-left: 5px;
+            padding-bottom: 8px;
+            color: rgb(209,209,214);
+            padding-top: 15px;
+            vertical-align: middle;
+            border-bottom: 1px solid rgb(99,99,102);
+        }
+        .skill_gray{
+            font-size: 16px;
+            font-weight: 300;
+            padding-left: 5px;
+            padding-bottom: 16px;
+            color: rgb(99,99,102);
+            padding-top: 15px;
+            list-style-type: none;
+            
+        }
+        .education>li{
+            list-style-type: none;
+            font-size: 14px;
+            padding-left: 5px;
+            padding-bottom: 8px;
+            color: rgb(209,209,214);
+        }
+        .education_gray>span{
+            color: gray;
+            padding-bottom: 15px;
+        }
+        .education_gray{
+            border-bottom: 1px solid rgba(128, 128, 128, 0.486);
+        }
+        .sub_left>h1{
+            font-size: 19px;
+            font-weight: 800;
+            padding-bottom: 16px;
+            padding-top: 10px;
+            color: #FF3529;
+        }/*sub_left*/
+        .sub_right{
+            width:462px; 
+           /*왼쪽 박스 옆에 자석처럼 붙여버림 그렇게 되서 왼쪽의 너비까지 포함해서 462가 넣어져버린다. 
+           즉 오른쪽으로 너비가 더 필요한 상황. 결국은 768로 설정해야 내가 원래 하려고 했던 462를 넣은 효과가 나타난다. 
+           한가지 더 생각해야 하는건 왼쪽박스에서 16PX만큼 옆으로 밀었으니까 결국 462->768->753*/
+           display: inline-block;
+          
+        }
+        .sub_right>h1{
+            font-size: 19px;
+            font-weight: 800;
+            padding-bottom: 16px;
+            color: #FF3529;
+        }
+       .content{
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(99,99,102);
+       }
+
+        .right_gray{
+            color: rgb(99,99,102);
+            padding-bottom: 20px;
+        }
+        .bold{
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        /*메인 끝*/
+        .footer_box{
+            margin-bottom: 62px;
+        }
+        
+    </style>
+<body>
+    <!--헤더-->
+        <header>
+            <div class="header_color">
+                <ul class="button_control">
+                    <li><button class="red_button" button onclick="red_change()"></button></li>
+                    <li><button class="blue_button"></button></li>
+                    <li><button class="green_button"></button></li>
+                    <li><button class="black_button"></button></li>
+                </ul>
+            </div>
+            <div class="header_main">
+                <div class="light_and_dark">
+                    <span><button  button type="button" onclick="location.href = 'index3.html'"><i data-feather="sun"></i>Light</button></span>
+                    <span><button class="sel" button type="button" onclick="location.href = 'index2.html'"><i data-feather="moon"></i>Dark</button></span>
+                </div>    
+                <div class= "my_profile">
+                    <img src="img/my_photo.jpg" width="64px", height="64px"><span class="geonwoo">geonwoo Roh</span>
+                </div>
+            </div>
+        </header>
+     <!--//헤더-->
+     <!--메인-->
+        <main>
+            <div class="main_box">
+                <div class="spare">
+                    <span><strong>백엔드 개발자 | Seoul, Republic of Korea</strong></span>
+                    <ul class="spare_button">
+                        <li><button>Instagram</button></li>
+                        <li><button>Linkedln</button></li>
+                        <li><button>Twitter</button></li>
+                    </ul>
+                </div>
+                <div class="sub_left">
+                    <h1>Contact</h1>
+                        <ul class="contact">
+                            <li> <i data-feather="home"></i><span class="home" onclick="location.href ='index2.html'">www.google.com</span></li>
+                            <li> <i data-feather="mail"></i><a class="mail" href="mailto:gwooroh23@gmail.com">gwooroh23@gmail.com</a></li>
+                            <li> <i data-feather="phone"></i><a class="phone" href="tel:010-3655-6338" >(010)-3655-6338</span></a>
+                            <li> <i data-feather="message-square"></i><span class="message_square" onclick="location.href ='index3.html'">Leave a message</span></li>
+                        </ul>
+                    <h1 class="h1_skill">Skill</h1>
+                        <ul class="skill">
+                            <li class="skill_gray"><span>Tools</span></li>
+                            <li class="adobe"><span >Adobe Creative Suite</span></li>
+                            <li class="sketch"><span >Sketch</span></li>
+                            <li class="figma"><span >Figma</span></li>
+                            <li class="invision"><span >InVision</span></li>
+                            <li class="skill_gray"><span>Language</span></li>
+                            <li class="html"><span >HTML, CSS, Python, Javascript, SQL</span></li>
+                        </ul>
+                    <h1>Education</h1>
+                        <ul class="education">
+                            <li><strong>서울대학교</strong></li>
+                            <li>응용소프트웨어전공</li>
+                            <li>2014년 졸업</li>
+                            <li class="education_gray"><span class="seoul">Seoul, Republic of Korea</span></li>
+                        </ul>
+
+                </div>
+                
+                <div class="sub_right">
+                    <h1>Project</h1>
+                    <p class="bold"><strong>인사시스템 ERP - 기획</strong></p>
+                    <p class="right_gray">(주)시큐리티 | 2018.12.01 ~ 2020.01.30</p>
+                    <p class="content">WBS 작성, UseCase 다이어그램, 스토리보드, 화면 흐름도, ERD 모델링,프로젝트 구조도, 테스트 시나리오 작성
+                        스프링 시큐리티 세션 폼 로그인, 회원가입. OAuth2.0, java Mail 회원 탈퇴, 로그아웃, 비밀번호 변경 (이메일 시 스템)
+                        프로필 이미지 게시판 글쓰기, 수정하기, 삭제하기, 검색, 댓글, 페이징기능 사용자 권한 관리, 그룹관리, 메인페이지</p>
+                    <P class="bold"><strong>그룹웨어 - 개발</strong></P>
+                    <p class="right_gray">(주)하이그룹웨어 | 2018.12.01 ~ 2020.01.30</p>
+                    <p class="content">사원 생성 및 상세조회(JPA Criteria) 게시판 읽기, 작성, 수정, 삭제 게시글  조회수, 좋아요 게시판 답들, 게시글 대댓글
+                        (계층구조, DFS Stack)
+                    </p>
+                    <p class="bold"><strong>기부하자 - 개발</strong></p>
+                    <p class="right_gray">(주)부트캠프 | 2018.12.01 ~ 2020.01.30</p>
+                    <p class="content">로그인(Spring Security Session)아이디 저장(JS LocalStorage Cookie 저 장방식)로그인 유지(Security Remember me)기능 아이디 찾기 기능
+                        비밀 번호 찾기 기능 회원가입 마이페이지의 회원정보 및 주문 내역 조회
+                    </p>
+                    <p class="bold"><strong>학사일정 - 리더</strong></p>
+                    <p class="right_gray">동아리 | 2018.12.01 ~ 2020.01.30</p>
+                    <p class="content">엑셀 파일 업로드 및 다운로드 유지보수 18만 건의 데이터 전처리 및 통계 대시보드 개발 관리자 페이지 신규 구축
+                    </p>
+                </div>
+                
+            </div>
+          
+        </main>
+    <!--//메인-->
+    <!-- 푸터-->
+        <footer>
+            <div class="footer_box">
+            Copyright by NibbleSKY Corp. All right reserved.
+            </div>
+        </footer>
+     <!-- //푸터-->
+</body>
+        <script>
+            feather.replace();
+           function red_change(){
+             document.bgColor='green'
+           }
+        </script>
+    </head>
+</html>
